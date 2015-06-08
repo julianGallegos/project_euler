@@ -1,9 +1,12 @@
+#create method to return number of charaters for an individual number input
+
 def number_letter_counts(input_number)
 
 	if input_number == 0
 		return 4
 	end
 
+	#this is how I accounted for numbers with 'and' in them (example 110 => "one hundred and ten")
 	if input_number > 100
 		total_text_count = 3
 	else
@@ -21,7 +24,7 @@ def number_letter_counts(input_number)
 		300 =>  12, #threehundred
 		200 => 10, #twohundred
 		100 =>  10, #onehundred
-		90 =>  5, #ninty
+		90 =>  6, #ninety
 		80 =>  6, #eighty
 		70 =>  7, #seventy
 		60 =>  5, #sixty
@@ -59,6 +62,9 @@ def number_letter_counts(input_number)
 end
 
 
+
+
+
 def find_total_letter_count_in_range(input_number) 
  	
  	total_char_count = 0
@@ -87,17 +93,23 @@ describe "#number_letter_counts" do
   	expect(number_letter_counts(33)).to eq 11
   end
 
-  it "number_letter_counts(1999)" do
-  	expect(number_letter_counts(1999)).to eq 34
+  it "number_letter_counts(112)" do
+  	expect(number_letter_counts(112)).to eq 19
+  end
+
+  it "number_letter_counts(115)" do
+  	expect(number_letter_counts(115)).to eq 20
   end
 
   it "number_letter_counts(342)" do
   	expect(number_letter_counts(342)).to eq 23
   end
 
-  it "number_letter_counts(112)" do
-  	expect(number_letter_counts(112)).to eq 19
+  it "number_letter_counts(1999)" do
+  	expect(number_letter_counts(1999)).to eq 35
   end
+
+
 
 end
 
@@ -114,10 +126,8 @@ describe "#find_total_letter_count_in_range" do
 		expect(find_total_letter_count_in_range(5)).to eq 19
 	end
 
-
-
 	it "find_total_letter_count_in_range(1000)" do
-		expect(find_total_letter_count_in_range(1000)).to eq 21051
+		expect(find_total_letter_count_in_range(1000)).to eq 21151
 	end
 
 end
