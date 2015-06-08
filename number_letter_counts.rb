@@ -90,7 +90,11 @@ def number_letter_counts(input_number)
 		return 4
 	end
 
-	total_text_count = 0
+	if input_number > 100
+		total_text_count = 3
+	else
+		total_text_count = 0
+	end
 
 	char_count_per_number = {
 		1000 => 11, #onethousand
@@ -142,15 +146,17 @@ end
 
 
 def find_total_letter_count_in_range(input_number) 
- 
-	total_char_count = 0
+ 	
+ 	total_char_count = 0
 
 	(1..input_number).each do |num|
 		total_char_count += number_letter_counts(num)
 	end
+
 	total_char_count
 end
 
+p find_total_letter_count_in_range(101)
 
 
 describe "#number_letter_counts" do
@@ -168,21 +174,36 @@ describe "#number_letter_counts" do
   end
 
   it "number_letter_counts(1999)" do
-  	expect(number_letter_counts(1999)).to eq 31
+  	expect(number_letter_counts(1999)).to eq 34
+  end
+
+  it "number_letter_counts(342)" do
+  	expect(number_letter_counts(342)).to eq 23
+  end
+
+  it "number_letter_counts(112)" do
+  	expect(number_letter_counts(112)).to eq 19
   end
 
 end
 
 
 
+
 describe "#find_total_letter_count_in_range" do
 
-	it "number_letter_counts(1)" do
-		expect(number_letter_counts(1)).to eq 3
+	it "find_total_letter_count_in_range(1)" do
+		expect(find_total_letter_count_in_range(1)).to eq 3
 	end
 
-	it "number_letter_counts(5)" do
-		expect(number_letter_counts(5)).to eq 19
+	it "find_total_letter_count_in_range(5)" do
+		expect(find_total_letter_count_in_range(5)).to eq 19
+	end
+
+	
+
+	it "find_total_letter_count_in_range(1000)" do
+		expect(find_total_letter_count_in_range(1000)).to eq 21051
 	end
 
 end
