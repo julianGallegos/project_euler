@@ -1,89 +1,3 @@
-	
-# def total_count_of_chars_per_number(input_number)
-
-# 	if input_number == 0
-# 		return "zero"
-# 	end
-
-# 	text_count = ""
-
-# 	numbers_to_words_hash = {
-
-# 		1000 => "onethousand",
-# 		900 => "ninehundred",
-# 		800 => "eighthundred",
-# 		700 => "sevenhundred",
-# 		600 => "sixhundred",
-# 		500 => "fivehundred",
-# 		400 => "fourhundred",
-# 		300 => "threehundred",
-# 		200 => "twohundred",
-# 		100 => "onehundred",
-# 		90 => "ninty",
-# 		80 => "eighty",
-# 		70 => "seventy",
-# 		60 => "sixty",
-# 		50 => "fifty",
-# 		40 => "forty",
-# 		30 => "thirty",
-# 		20 => "twenty",
-# 		19 => "nineteen",
-# 		18 => "eighteen",
-# 		17 => "seventeen",
-# 		16 => "sixteen",
-# 		15 => "fifteen",
-# 		14 => "fourteen",
-# 		13 => "thirteen",
-# 		12 => "twelve",
-# 		11 => "eleven",
-# 		10 => "ten",
-# 		9 => "nine",
-# 		8 => "eight",
-# 		7 => "seven",
-# 		6 => "six",
-# 		5 => "five",
-# 		4 => "four",
-# 		3 => "three",
-# 		2 => "two",
-# 		1 => "one"
-# 	}
-
-
-
-# 	numbers_to_words_hash.each do |key, value|
-
-# 		text_count << value * (input_number / key)
-# 		input_number = input_number % key
-# 	end
-# 	text_count
-# end
-
-
-
-
-# describe "#total_count_of_chars_per_number" do
-
-# 	it "total_count_of_chars_per_number(0)" do
-# 		expect(total_count_of_chars_per_number(0)).to eq "zero"
-# 	end
-
-# 	it "total_count_of_chars_per_number(1)" do
-# 		expect(total_count_of_chars_per_number(1)).to eq "one"
-# 	end
-
-# 	it "total_count_of_chars_per_number(23)" do
-# 		expect(total_count_of_chars_per_number(23)).to eq "twentythree"
-# 	end
-
-
-# 	it "total_count_of_chars_per_number(1999)" do
-# 		expect(total_count_of_chars_per_number(1999)).to eq "onethousandninehundrednintynine"
-# 	end
-
-
-# end
-
-
 def number_letter_counts(input_number)
 
 	if input_number == 0
@@ -200,7 +114,7 @@ describe "#find_total_letter_count_in_range" do
 		expect(find_total_letter_count_in_range(5)).to eq 19
 	end
 
-	
+
 
 	it "find_total_letter_count_in_range(1000)" do
 		expect(find_total_letter_count_in_range(1000)).to eq 21051
