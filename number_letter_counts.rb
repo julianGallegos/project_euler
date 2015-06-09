@@ -7,6 +7,7 @@ def number_letter_counts(input_number)
 	end
 
 	
+	#this is how I accounted for numbers with 'and' in them (example 110 => "one hundred and ten")
 
 	if input_number == 1000 || input_number <= 100 || input_number % 100 == 0
 		total_text_count = 0
@@ -14,7 +15,6 @@ def number_letter_counts(input_number)
 		total_text_count = 3
 	end
 
-	#this is how I accounted for numbers with 'and' in them (example 110 => "one hundred and ten")
 
 
 	#check number 200 through 900 to see where error is
